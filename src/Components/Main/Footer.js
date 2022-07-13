@@ -9,6 +9,7 @@ import axios from 'axios'
 import { BASE_URL, Home_DESCRIPTION, FOOTER_ABOUT } from '../../Constant/Constant'
 import { useEffect, useState } from "react";
 import Loader from '../HomePage/Loader'
+import { Link } from 'react-router-dom'
 const Footer = () => {
     const [footer, setFooter] = useState({})
     useEffect(() => {
@@ -83,10 +84,10 @@ const Footer = () => {
                         <div className="col-md-4 col-footer">
                             <h3>Useful Links</h3>
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item">An item</li>
+                                <li className="list-group-item">Home</li>
                                 <li className="list-group-item">A second item</li>
                                 <li className="list-group-item">A third item</li>
-                                <li className="list-group-item">A fourth item</li>
+                                <li className="list-group-item"><Link to="/faq">Faq</Link></li>
                                 <li className="list-group-item">And a fifth one</li>
                             </ul>
                         </div>

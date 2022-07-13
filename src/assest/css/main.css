@@ -304,14 +304,12 @@ Home Page
 .place-image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 .place-overlay {
     position: absolute;
     bottom: 0;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
     /* Black see-through */
     color: #f1f1f1;
     width: 100%;
@@ -322,7 +320,23 @@ Home Page
     padding: 20px;
     text-align: center;
 }
+.place-overlay span{
+    background-color: #072038;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+}
 
 .box-container:hover .place-overlay {
     opacity: 1;
+}
+
+.toast{
+    position: absolute;
+    right: 0;
+    z-index: 999;
+}
+
+.single-blog img{
+    width: 100% !important;
 }

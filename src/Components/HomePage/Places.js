@@ -9,7 +9,7 @@ const Places = () => {
                             <div className="box-container">
                                 <img src={japan} className=" place-image" />
                                 <p className="place-overlay">
-                                    Some thing Places
+                                    <span>Some thing Places</span> 
                                 </p>
                             </div>
                         </div>
@@ -17,7 +17,7 @@ const Places = () => {
                             <div className="box-container">
                                 <img src={japan} className=" place-image" />
                                 <p className="place-overlay">
-                                    Some thing Places
+                                <span>Some thing Places</span> 
                                 </p>
                             </div>
                         </div>
@@ -25,7 +25,7 @@ const Places = () => {
                             <div className="box-container">
                                 <img src={japan} className=" place-image" />
                                 <p className="place-overlay">
-                                    Some thing Places
+                                <span>Some thing Places</span> 
                                 </p>
                             </div>
                         </div>
@@ -33,7 +33,7 @@ const Places = () => {
                             <div className="box-container">
                                 <img src={japan} className=" place-image" />
                                 <p className="place-overlay">
-                                    Some thing Places
+                                <span>Some thing Places</span> 
                                 </p>
                             </div>
                         </div>

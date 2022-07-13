@@ -13,7 +13,6 @@ const HomePage = () => {
         axios.get(`${BASE_URL}/api/slider`).then(response => {
             setSlider(response.data)
         })
-
     }, [0])
    
 
@@ -21,10 +20,7 @@ const HomePage = () => {
         axios.get(`${BASE_URL}/api/about/${Home_DESCRIPTION}`).then((response) => {
             setHomeDescription(response.data)
         })
-
     }, [0])
-    console.log(homeDescription)
-
 
     return (
         <>
@@ -50,7 +46,6 @@ const HomePage = () => {
                                 ) : (
                                     <>
                                     <Loader />
-
                                     </>
                                 )}
 
@@ -72,7 +67,6 @@ const HomePage = () => {
                     </div>
                     <Places />
                 </div>
-
                 <Testimonial />
             </div>
         </>

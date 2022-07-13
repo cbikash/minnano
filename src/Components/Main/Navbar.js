@@ -6,7 +6,9 @@ const Navbar = () => {
          <div className="container d-flex align-items-center justify-content-center top-nav">
             <div className="row">
                 <div className="col">
+                    <Link to="/">
                     <img src={logo} className="img-fluid nav-logo top-nav-logo" />
+                    </Link>
                 </div>
             </div>
          </div>

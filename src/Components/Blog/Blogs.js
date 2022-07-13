@@ -5,6 +5,7 @@ import axios from "axios";
 import { BASE_URL } from '../../Constant/Constant'
 import { useEffect, useState } from "react";
 import Loader from '../HomePage/Loader'
+import moment from 'moment'
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
 
@@ -33,6 +34,7 @@ const Blogs = () => {
                                             <p style={{ textAlign: "center" }}>
                                                 <span>
                                                     <b>{blog.title} </b>
+                                                    <span>{moment(blog.created_at).format('MMMM Do YYYY')}</span>
                                                 </span>
                                                 <br />
                                             </p>

@@ -2,6 +2,7 @@
 import {getStudyAt} from '../../Service/About/AboutService'
 import {AboutActions} from './AboutSlice'
 import {SendMessage} from '../../Service/Message/MessageService'
+import { uiActions } from '../uiSlice'
 
 
 
@@ -36,9 +37,11 @@ export const sendMessageToServer = (data) => {
         }
         try{
             const responseData = await sendData(data)
-            console.log('send')
-
+            dispatch(uiActions.showNotification({message: "Successfuly send Message", type: "success",open:true}));
+           
         }catch(err){
+            dispatch(uiActions.showNotification({message: "Internal Error", type: "error",open:true}));
+    
             console.log(err)
         }
     }

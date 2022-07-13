@@ -11,31 +11,34 @@ const ContactForm = () => {
     const dispatch = useDispatch();
     const handleSubmit = async(e) => {
         e.preventDefault();
-        dispatch(sendMessageToServer({name,address,email,contact,message}))
+        dispatch(sendMessageToServer({name,address,email,contact,message}));
+        setName('')
+        setAddress('')
+        setEmail('')
+        setContact('')
+        setMessage('')
     }
-
-
     return (
         <>
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="form-group col-md-6">
-                        <input type="text" name="name" onChange={({target}) => setName(target.value)} className="form-control" id="inputAddress" placeholder="Your Name *" />
+                        <input type="text" name="name" onChange={({target}) => setName(target.value)} value={name} className="form-control" id="inputAddress" placeholder="Your Name *" />
                     </div>
                     <div className="form-group col-md-6">
-                        <input type="text" name="address" onChange={({target}) => setAddress(target.value)} className="form-control" id="inputAddress2" placeholder="Your Address *" />
+                        <input type="text" name="address" onChange={({target}) => setAddress(target.value)} value={address} className="form-control" id="inputAddress2" placeholder="Your Address *" />
                     </div>
                     <div className="row">
                     </div>
                     <div className="form-group col-md-6">
-                        <input type="email" name="email" onChange={({target}) => setEmail(target.value)} className="form-control" id="inputAddress2" placeholder="Your Email *" />
+                        <input type="email" name="email" onChange={({target}) => setEmail(target.value)} value={email} className="form-control" id="inputAddress2" placeholder="Your Email *" />
                     </div>
                     <div className="form-group col-md-6">
-                        <input type="text" name="contact" className="form-control" onChange={({target})=> setContact(target.value)} id="inputAddress2" placeholder="Your Number *" />
+                        <input type="text" name="contact" className="form-control" value={contact} onChange={({target})=> setContact(target.value)} id="inputAddress2" placeholder="Your Number *" />
                     </div>
                 </div>
                 <div className="form-group">
-                    <textarea className="form-control" name="message" placeholder="Your Message *" onChange={({target})=>setMessage(target.value)} id="exampleFormControlTextarea1" rows={4} spellCheck="false" defaultValue={""} />
+                    <textarea className="form-control" name="message"  placeholder="Your Message *" onChange={({target})=>setMessage(target.value)} id="exampleFormControlTextarea1" rows={4} spellCheck="false" value={message} />
                 </div>
                 <button className="btn-message shadow" type="submit">Send Message</button>
             </form>

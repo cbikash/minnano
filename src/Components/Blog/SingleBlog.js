@@ -44,10 +44,10 @@ console.log(blog)
                                 <h3>{blog.title}
                                 </h3>
                                 <hr />
-                                <img src={blog.image} className="img-fluid" />
+                                <img src={blog.image} className="img-fluid"style={{width:"100% !important"}} />
                                 <p className="publish-title"><TbCalendarTime /> {moment(blog.created_at).format('MMMM Do YYYY')} <AiFillFolderOpen /> <Link to="/event-blog">News & Event</Link> <span className="text-right" style={{ textAlign: "right", marginRight: "10px" }}>  <b>Published: </b> {moment(blog.created_at).startOf('hour').fromNow()}</span></p>
                                 <br />
-                                <div dangerouslySetInnerHTML={{ __html: blog.content }}>
+                                <div className='single-blog' dangerouslySetInnerHTML={{ __html: blog.content }}>
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -58,9 +58,6 @@ console.log(blog)
                                        
                                     ))}
                                 </ul>
-
-
-
                             </div>
 
                         </>
