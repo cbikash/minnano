@@ -5,7 +5,8 @@ import axios from "axios";
 import Loader from './Loader'
 import Testimonial from './Testimonial'
 import Places from './Places'
-
+import Class  from './Class'
+import Offered from "./Offered";
 const HomePage = () => {
     const [slider, setSlider] = useState([])
     const [homeDescription, setHomeDescription] = useState({})
@@ -13,12 +14,14 @@ const HomePage = () => {
         axios.get(`${BASE_URL}/api/slider`).then(response => {
             setSlider(response.data)
         })
+
     }, [0])
    
 
     useEffect(() => {
         axios.get(`${BASE_URL}/api/about/${Home_DESCRIPTION}`).then((response) => {
             setHomeDescription(response.data)
+            
         })
     }, [0])
 
@@ -67,6 +70,8 @@ const HomePage = () => {
                     </div>
                     <Places />
                 </div>
+                <Class />
+                <Offered />
                 <Testimonial />
             </div>
         </>

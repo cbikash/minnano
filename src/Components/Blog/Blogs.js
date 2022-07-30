@@ -17,6 +17,12 @@ const Blogs = () => {
     const truncate = (input) =>
       input?.length > 50 ? `${input.substring(3, 100)}...` : input;
 
+      const truncateTitle = (input) =>
+      input?.length > 50 ? `${input.substring(0, 100)}...` : input;
+
+      
+
+
     return (
         <>
             <Breadcurm bread={{ title: "Blog & Events" }} />
@@ -28,15 +34,15 @@ const Blogs = () => {
                         <>
                             <div className="col-md-3">
                                 <Link to={`/blog/${blog.id}`} className="cart-blog-a primary-color">
-                                    <div className="card cart-blog" style={{ width: '100%' }}>
+                                    <div className="card cart-blog" style={{ width: '100%'}}>
                                         <img src={blog.image} className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <p style={{ textAlign: "center" }}>
+                                        <div className="card-body" style={{height: "250px",paddingBottom:"30px",overflow:"hidden"}}>
+                                            <p>
                                                 <span>
-                                                    <b>{blog.title} </b>
-                                                    <span>{moment(blog.created_at).format('MMMM Do YYYY')}</span>
+                                                    <b >{truncateTitle(blog.title)} </b>
                                                 </span>
-                                                <br />
+                                                <br/>
+                                            <span className="blog-date">{moment(blog.created_at).format('MMMM Do YYYY')}</span>
                                             </p>
                                             <p className="card-text team-social" style={{ textAlign: "justify" }}>
                                                 {truncate(blog.content)}

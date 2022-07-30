@@ -25,13 +25,11 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink to="/about" className="nav-link" aria-current="page" >About Us
-                                
-                                </NavLink>
+                                <Link to="/about" className="nav-link primary-color" >About Us</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link primary-color" href="#">Courses</a>
-                            </li>
+                            </li> */}
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle primary-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
@@ -58,9 +56,9 @@ const Navbar = () => {
                                 <NavLink to ="/contact" className="nav-link primary-color">Contact</NavLink>
                             </li>
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link primary-color">Gallery</a>
-                            </li>
+                            </li> */}
                             
                         </ul>
                     </div>

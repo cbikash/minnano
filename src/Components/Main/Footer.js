@@ -12,9 +12,24 @@ import Loader from '../HomePage/Loader'
 import { Link } from 'react-router-dom'
 const Footer = () => {
     const [footer, setFooter] = useState({})
+    const [email, setEmail] = useState('')
     useEffect(() => {
         axios.get(`${BASE_URL}/api/about/${FOOTER_ABOUT}`).then(response => setFooter(response.data))
     }, [0])
+    
+
+
+    const handleSubscribe = async(e) => {
+        e.preventDefault();
+        try{
+       const response = await axios.post(`${BASE_URL}/api/subscribe`,{email: email});
+       setEmail('');
+       alert(`${response.data.message}`);
+       }catch{
+        
+       }
+    
+    }
     return (
 
         <>
@@ -27,10 +42,10 @@ const Footer = () => {
                                 <p style={{ fontSize: "30px" }}><b>Newsletter</b></p>
                             </div>
                             <div className="col-md-10">
-                                <form>
+                                <form onSubmit={handleSubscribe}>
                                     <div className="input-group mb-3 mt-3">
-                                        <input type="text" className="form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="button-addon2" />
-                                        <button className="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
+                                        <input type="email" name='email' className="form-control"  onChange={({target}) => setEmail(target.value)} value={email}  placeholder="Your Email Address"/>
+                                        <button className="btn btn-primary" type="submit" id="button-addon2">Subscribe</button>
                                     </div>
                                 </form>
 
@@ -87,7 +102,7 @@ const Footer = () => {
                                 <li className="list-group-item">Home</li>
                                 <li className="list-group-item">A second item</li>
                                 <li className="list-group-item">A third item</li>
-                                <li className="list-group-item"><Link to="/faq">Faq</Link></li>
+                                <li className="list-group-item"><Link to="/faq" className='link-fotter'>Faq</Link></li>
                                 <li className="list-group-item">And a fifth one</li>
                             </ul>
                         </div>

@@ -31,7 +31,13 @@ const FAQ = () => {
         style={{ paddingTop: "30px", paddingBottom: "30px" }}
       >
         <div className="row">
+          <div className="col-md-12" >
+            <div className="faqs-heading">
+              <h3>FAQ's</h3>
+            </div>
+          </div>
           <div className="col-md-12">
+
             <div className="accordion" id="accordionPanelsStayOpenExample">
               {!loader ? (
                 <>

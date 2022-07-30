@@ -8,8 +8,10 @@ import axios from 'axios'
 import { BASE_URL } from '../../Constant/Constant'
 import Loader from '../HomePage/Loader'
 import moment from 'moment'
+import { useParams } from 'react-router-dom'
 const SingleBlog = () => {
-    const id = 1;
+    const navigation = useParams()
+    const id = navigation.id;
     const [blog, setBlog] = useState({})
     const [loader, setLoader] = useState(true)
     useEffect(() => {
@@ -21,7 +23,8 @@ const SingleBlog = () => {
             console.log(err)
             setLoader(false)
         })
-    }, [0])
+    }, [navigation])
+    
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
@@ -29,28 +32,28 @@ const SingleBlog = () => {
             setBlogs(response.data.data)
         })
     }, [0])
-
-console.log(blog)
     return (
         <>
-            <Breadcurm bread={{ title: "Single Blog", image: image1 }} />
-            <div className="container" style={{ marginTop: "30px" }} >
+            <Breadcurm bread={{ title: "News and Events", image: image1 }} />
+            <div className="container " style={{ marginTop: "30px", backgroundColor: "#fff" }} >
                 <div className="row">
                     {!loader ?
                      <>
                      {Object.keys(blog).length > 0 &&
                         <>
                             <div className="col-md-8">
-                                <h3>{blog.title}
-                                </h3>
-                                <hr />
-                                <img src={blog.image} className="img-fluid"style={{width:"100% !important"}} />
+                                <h2><b>{blog.title} </b>
+                                </h2>
                                 <p className="publish-title"><TbCalendarTime /> {moment(blog.created_at).format('MMMM Do YYYY')} <AiFillFolderOpen /> <Link to="/event-blog">News & Event</Link> <span className="text-right" style={{ textAlign: "right", marginRight: "10px" }}>  <b>Published: </b> {moment(blog.created_at).startOf('hour').fromNow()}</span></p>
-                                <br />
+                                
+                                <hr />
+                                <img src={blog.image} className="img-fluid" style={{width:"100%",marginBottom:"20px"}}  />
                                 <div className='single-blog' dangerouslySetInnerHTML={{ __html: blog.content }}>
                                 </div>
                             </div>
                             <div className="col-md-4">
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Froshanmahato729&tabs=timeline&width=340&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1025100674857421"style={{height: "300px",width: "100%",marginBottom: "40px"}} scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                <div className='news-block'></div>
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item blog-list-Header">Latest News & Event</li>
                                     {blogs && blogs.map(blog =>(
