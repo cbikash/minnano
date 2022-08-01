@@ -20,7 +20,6 @@ const Class = () => {
          setPhone('')
          setLevels('')
          setApply('')
-         
          alert(`${(await response).data.message}`)
     }catch(e){
       console.log(e)

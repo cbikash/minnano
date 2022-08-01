@@ -1,4 +1,4 @@
-const BASE_URL= "http://127.0.0.1:8000";
+const BASE_URL= "https://minnano.cbikas.com.np";
 
 export const Home_DESCRIPTION = '101';
 export const About_PAGE = '102';
