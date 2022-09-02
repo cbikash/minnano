@@ -15,6 +15,7 @@ import Blogs from "../Blog/Blogs";
 import SingleBlog from "../Blog/SingleBlog";
 import FAQ from "../About/Faq";
 import Notification from "./Notification";
+import EventCalendar from "../EventCalendar/EventCalendar";
 const Layout = () => {
   const dispatch = useDispatch();
   const response = useSelector((state) => state.about.studyAbout);
@@ -48,6 +49,7 @@ const Layout = () => {
             <Route path="/event-blog" element={<Blogs />} />
             <Route path="/blog/:id" element={<SingleBlog />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/event-calendar" element={<EventCalendar />} />
           </Routes>
         </div>
 

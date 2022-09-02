@@ -10,11 +10,13 @@ import Offered from "./Offered";
 const HomePage = () => {
     const [slider, setSlider] = useState([])
     const [homeDescription, setHomeDescription] = useState({})
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[0])
     useEffect(() => {
-        axios.get(`${BASE_URL}/api/slider`).then(response => {
+        axios.get(`${BASE_URL}/api/slider/${201}`).then(response => {
             setSlider(response.data)
         })
-
     }, [0])
    
 

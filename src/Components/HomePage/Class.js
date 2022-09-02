@@ -2,6 +2,7 @@ import n5 from "../../assest/images/n5.jpg";
 import axios from "axios";
 import { useEffect,useState } from "react";
 import { BASE_URL } from "../../Constant/Constant";
+import Loader from "./Loader";
 
 const Class = () => {
   const [courses, setCourses] = useState([])
@@ -10,6 +11,7 @@ const Class = () => {
   const [phone, setPhone] = useState('')
   const [levels, setLevels] = useState('')
   const [apply, setApply] = useState('')
+  const [loading, setLoading] =useState(true)
 
   const hanndelOnsubmit = async(e) => {
     e.preventDefault();
@@ -28,6 +30,7 @@ const Class = () => {
 
   useEffect(()=> {
     axios.get(`${BASE_URL}/api/list/course`).then(response => (setCourses(response.data)))
+    setLoading(false)
   },[0])
   return (
     <>
@@ -39,6 +42,7 @@ const Class = () => {
                 Japanese Language Classes
               </p>
               <br />
+              {loading ? <Loader /> : <>
               {courses.data  && courses.data.map(data => (
                 <div className="lang-sec" key={data.id}>
                 <div className="row">
@@ -52,6 +56,9 @@ const Class = () => {
                 </div>
               </div>
               ))}
+              
+              </>}
+              
             </div>
             <div className="col-md-4">
               <div className="apply-section">

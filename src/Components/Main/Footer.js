@@ -9,7 +9,7 @@ import axios from 'axios'
 import { BASE_URL, Home_DESCRIPTION, FOOTER_ABOUT } from '../../Constant/Constant'
 import { useEffect, useState } from "react";
 import Loader from '../HomePage/Loader'
-import { Link } from 'react-router-dom'
+import { Link,NavLink } from 'react-router-dom'
 const Footer = () => {
     const [footer, setFooter] = useState({})
     const [email, setEmail] = useState('')
@@ -99,11 +99,12 @@ const Footer = () => {
                         <div className="col-md-4 col-footer">
                             <h3>Useful Links</h3>
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item">Home</li>
-                                <li className="list-group-item">A second item</li>
-                                <li className="list-group-item">A third item</li>
+                                <li className="list-group-item"><Link to="/" className='link-fotter'>Home</Link></li>
+                                <li className="list-group-item"><NavLink to="/event-calendar" className='link-fotter'>Event Calendar</NavLink></li>
+                                <li className="list-group-item"><Link to="/about" className='link-fotter'>About</Link></li>
+                                <li className="list-group-item"><Link to="/event-blog" className='link-fotter'>Event and Blog</Link></li>
                                 <li className="list-group-item"><Link to="/faq" className='link-fotter'>Faq</Link></li>
-                                <li className="list-group-item">And a fifth one</li>
+                                <li className="list-group-item"><Link to="/contact" className='link-fotter'>Contact</Link></li>
                             </ul>
                         </div>
                         <div className="col-md-4 col-footer">
@@ -119,7 +120,7 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p style={{ textAlign: "center", color: "#b6c2ff", paddingTop: "10px", fontSize: "13px" }}>
-                        © 2001-2022 Minnano Daisuki Education Consultancy Pvt. Ltd. All right reserved.
+                        © 2001-2022 Minnano Daisuki Education Consultancy Pvt. Ltd. All right reserved. (Designed & Developed by <a href='https://www.facebook.com/vxbikas/'>Bikash chaudhary</a> )
                     </p>
                 </div>
 

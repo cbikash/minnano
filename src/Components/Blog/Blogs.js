@@ -8,7 +8,10 @@ import Loader from '../HomePage/Loader'
 import moment from 'moment'
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
-
+    
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[0])
     useEffect(() => {
         axios.get(`${BASE_URL}/api/blog`).then((response) => {
             setBlogs(response.data.data)

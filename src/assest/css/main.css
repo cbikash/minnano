@@ -79,6 +79,14 @@ body {
     .top-nav {
         display: block
     }
+    .carousel-body{
+        width: 100% !important;
+    }
+    .carousel-body img{
+        left: 40% !important;
+        right: 40% !important;
+
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -94,6 +102,7 @@ body {
     .bottom-nav-img {
         display: none
     }
+    
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -113,6 +122,8 @@ body {
     .top-nav {
         display: none
     }
+
+   
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -281,6 +292,7 @@ Home Page
     margin: 50px auto;
 }
 
+
 .carousel-body img {
     width: 100px;
     height: 100px;
@@ -443,4 +455,15 @@ Home Page
     font-weight: bold;
     font-size: 16px;
     text-align: center;
+}
+
+.list-item-custom{
+    list-style: circle !important;
+}
+.list-item-custom li a{
+    color: #166dba;
+    text-decoration: none;
+}
+.list-item-custom li{
+    margin: 10px 0;
 }

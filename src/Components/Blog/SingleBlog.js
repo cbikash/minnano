@@ -14,6 +14,11 @@ const SingleBlog = () => {
     const id = navigation.id;
     const [blog, setBlog] = useState({})
     const [loader, setLoader] = useState(true)
+    
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[0])
+    
     useEffect(() => {
         axios.get(`${BASE_URL}/api/blog/${id}`)
         .then(response => {setBlog(response.data.data)
@@ -42,6 +47,7 @@ const SingleBlog = () => {
                      {Object.keys(blog).length > 0 &&
                         <>
                             <div className="col-md-8">
+                                
                                 <h2><b>{blog.title} </b>
                                 </h2>
                                 <p className="publish-title"><TbCalendarTime /> {moment(blog.created_at).format('MMMM Do YYYY')} <AiFillFolderOpen /> <Link to="/event-blog">News & Event</Link> <span className="text-right" style={{ textAlign: "right", marginRight: "10px" }}>  <b>Published: </b> {moment(blog.created_at).startOf('hour').fromNow()}</span></p>
@@ -56,6 +62,7 @@ const SingleBlog = () => {
                                 <div className='news-block'></div>
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item blog-list-Header">Latest News & Event</li>
+                                   
                                     {blogs && blogs.map(blog =>(
                                         <li key={blog.id} className="list-group-item blog-list"><Link to={`/blog/${blog.id}`} >{blog.title}</Link></li>
                                        
@@ -64,7 +71,6 @@ const SingleBlog = () => {
                             </div>
 
                         </>
-
                     }
                      
                      </>:

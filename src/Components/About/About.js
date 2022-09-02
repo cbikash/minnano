@@ -9,6 +9,9 @@ import Loader from '../HomePage/Loader'
 const About = () => {
     const [about, setAbout] = useState({})
     const [loader, setLoader] = useState(true)
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[0])
 
 
     useEffect(() => {

@@ -6,7 +6,11 @@ import {AiFillPhone} from 'react-icons/ai'
 import {BsFillPersonFill} from 'react-icons/bs'
 import {CgWebsite} from 'react-icons/cg'
 import ContactForm from './ContactForm'
+import { useEffect } from 'react'
 const Contact = () => {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[0])
 
 
     return (

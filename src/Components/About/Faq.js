@@ -9,6 +9,10 @@ import Loader from "../HomePage/Loader";
 const FAQ = () => {
   const [faqs, setFaq] = useState({});
   const [loader, setLoader] = useState(true);
+  
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[0])
 
   useEffect(() => {
     axios.get(`${BASE_URL}/api/faq`).then((response) => {
