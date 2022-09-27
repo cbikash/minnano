@@ -353,9 +353,11 @@ Home Page
 }
 
 .toast{
-    position: absolute;
+    position: fixed;
+    background-color: #dfdfdf !important;
     right: 0;
     z-index: 999;
+    border: 1px solid #ff5326;
 }
 
 .single-blog img{
