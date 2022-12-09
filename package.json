@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts5": "^5.2.29",
     "@fullcalendar/daygrid": "^5.11.2",
     "@fullcalendar/react": "^5.11.2",
     "@reduxjs/toolkit": "^1.8.2",
@@ -11,10 +12,12 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
+    "esbuild": "^0.15.11",
     "moment": "^2.29.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
@@ -22,10 +25,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "client:build": "esbuild client/src/index.js --bundle --outfile=built/app.js",
+    "server:build": "esbuild server/src/index.js --bundle --outfile=built/server.js --platform=node",
+    
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-snap": "^1.23.0"
   }
 }

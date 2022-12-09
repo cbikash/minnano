@@ -16,6 +16,7 @@ import SingleBlog from "../Blog/SingleBlog";
 import FAQ from "../About/Faq";
 import Notification from "./Notification";
 import EventCalendar from "../EventCalendar/EventCalendar";
+import ChartTest from "../Chart/ChartTest";
 const Layout = () => {
   const dispatch = useDispatch();
   const response = useSelector((state) => state.about.studyAbout);
@@ -50,6 +51,7 @@ const Layout = () => {
             <Route path="/blog/:id" element={<SingleBlog />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/event-calendar" element={<EventCalendar />} />
+            <Route path="/chart" element={<ChartTest />} />
           </Routes>
         </div>
 

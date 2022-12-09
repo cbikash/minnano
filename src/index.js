@@ -8,7 +8,26 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './Store/index';
 import { BrowserRouter } from "react-router-dom";
+
+import { hydrate, render } from "react-dom";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// const App1 = (
+//   <React.StrictMode>
+//   <BrowserRouter>
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   </BrowserRouter>
+// </React.StrictMode>
+// )
+// const rootElement = document.getElementById("root");
+// if (rootElement.hasChildNodes()) {
+//   hydrate(App1, rootElement);
+// } else {
+//   render(App1 , rootElement);
+// }
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
